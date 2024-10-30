@@ -1,39 +1,35 @@
-# main.py
-"""
-    Código bien Argentino, por Tomber991
-"""
-
 import discord
 from discord.ext import commands
-from dotenv import load_doten
-import asyncio
+import os
+from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv()  # Carga el archivo .env
+token = os.getenv('DISCORD_TOKEN')  # Lee el token desde la variable de entorno
 
-# Obtener el token de Discord
-token = os.getenv('DISCORD_TOKEN')
+# Verifica si el token se ha cargado correctamente
+if token is None:
+    print("Error: El token de Discord no se ha cargado. Verifica el archivo .env.")
+else:
+    print("El token se ha cargado correctamente.")
 
-# Configurar intents
+# Resto del código para inicializar el bot
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True  
 
-# Crear el bot
-bot = commands.Bot(command_prefix='arg> ', intents=intents)
+bot = commands.Bot(command_prefix='/arg ', intents=intents)
 
-# Evento on_ready
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para repartir mates y buena onda.')
+    await bot.change_presence(activity="Bip BiP BOp")
 
-# Función asíncrona para cargar la extensión
 async def load_extensions():
-    await bot.load_extension('comandos')  # Cargar el módulo de comandos como extensión
+    await bot.load_extension('cogs.comandos')
 
-# Ejecutar el bot
 async def main():
     await load_extensions()
     await bot.start(token)
 
-# Iniciar el loop de eventos
+import asyncio
 asyncio.run(main())

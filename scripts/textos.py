@@ -1,17 +1,19 @@
 # textos.py
 import random
+import discord
 
 frases = [
-    "¿Todo bien, pibe?", 
-    "¡Aguante el fernet!", 
-    "Nos tomamos unos mates, ¿o qué?", 
-    "¿Listo para el asado?", 
-    "Che, no te olvides del dulce de leche."
+    "¿Todo bien Pá?", 
+    "Aguantee el fernet!", 
+    "Pinta unos mates?", 
+    "Sale un asado?", 
+    "Qondaa, q paso?"
 ]
 
+
 insultos = [
-    "che boludo", 
-    "che pelotudo"
+    "eu boludo", 
+    "eu pelotudo"
 ]
 
 refranes = [
@@ -23,10 +25,8 @@ refranes = [
 ]
 
 respuestas_insultos = [
-    "Eh, tranqui, no te calientes que estamos en paz.",
-    "Jajaja, no me ofendo, somos argentos.",
-    "Ahí nomás, no la bardees."
+    "Eh, tranqui, no te calentess que estamos en paz.",
+    "Jajaja no me ofendo amigo, soy un Bot qué queres.",
+    "Ahí nomás, no la bardees.",
+    "Calmate papá"
 ]
-
-def Obtener_Frase():
-    frase=random.choice(frases)

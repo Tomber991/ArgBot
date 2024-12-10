@@ -66,13 +66,13 @@ GIPHY_API_TOKEN=tu_token_de_giphy
 
 🗂️ Estructura del Proyecto
 
-Bot-Argentino/
-├── main.py                 # Archivo principal para ejecutar el bot
-├── comandos.py             # Cog con comandos principales
-├── frases.db               # Base de datos SQLite con frases argentinas
-├── requirements.txt        # Dependencias del proyecto
-├── .env                    # Tokens de Discord y Giphy (excluido de git)
-└── README.md               # Este hermoso archivo
+Argbot/
+- main.py                 # Archivo principal para ejecutar el bot
+- cogs                    # Carpeta que contiene modulos de comandos
+- frases.db               # Base de datos SQLite con frases argentinas
+- requirements.txt        # Dependencias del proyecto
+- .env                    # Tokens de Discord y Giphy (excluido de git)
+- README.md               # Este hermoso archivo
 
 📚 Tecnologías Usadas
 

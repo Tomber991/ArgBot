@@ -45,26 +45,30 @@
 - [Requests](https://docs.python-requests.org/en/master/) (`pip install requests`)
 - Una cuenta en [Giphy Developers](https://developers.giphy.com/) para obtener tu **API Key**.
 
+
 ### 📥 Configuración
 1. Cloná el repositorio:
    ```bash
    git clone https://github.com/TuUsuario/Bot-Argentino.git
    cd Bot-Argentino
+   ```
 
-    Instalá las dependencias:
-
-pip install -r requirements.txt
+### Instalá las dependencias:
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 Configurá las variables de entorno: Creá un archivo .env y añadí lo siguiente:
-
+  ```bash
 DISCORD_TOKEN=tu_token_de_discord
 GIPHY_API_TOKEN=tu_token_de_giphy
+  ```
 
 ¡Ejecutá el bot!
 
     python main.py
 
-🗂️ Estructura del Proyecto
+## 🗂️ Estructura del Proyecto
 
 Argbot/
 - main.py                 # Archivo principal para ejecutar el bot

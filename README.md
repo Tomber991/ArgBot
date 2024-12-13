@@ -1,6 +1,6 @@
 # 🤖 ArgBot 🇦🇷
 
-¡Bienvenido a **ArgBot**! Este es un bot de Discord que trae todo el espíritu argentino al servidor. Desde frases bien argentas hasta comandos con reacciones, tiene alta buena onda! 🧉
+¡Bienvenido a **ArgBot**! Este es un bot de Discord que trae todo el espíritu argentino al servidor. Desde frases bien argentas hasta comandos con reacciones. Bot con buena onda! 🧉
 
 ---
 

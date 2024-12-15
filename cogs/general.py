@@ -63,12 +63,16 @@ class ComandosArgentinos(commands.Cog):
 
     # Responder con Gifs
     # Utilizacion de SqLite3
+    
     @commands.command(name='che')
     async def che(self, ctx):
         trm="saludo"
         gif_url=self.BuscarGifs(trm)
-        frase = random.choice(textos.frases)
-        await ctx.send(frase)
+
+        obtener_frase_aleatoria(self.conn,saludos)
+
+        #frase = random.choice(textos.frases)
+        #await ctx.send(frase)
 
     @commands.command(name='dicho')
     async def dicho(self, ctx):

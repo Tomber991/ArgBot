@@ -19,81 +19,56 @@ def obtener_frase_aleatoria(conn, categoria):
     return resultado[0] if resultado else None
 
 load_dotenv()
-GIPHY_TOKEN=os.getenv('GIPHY_API_TOKEN')
+GIPHY_TOKEN = os.getenv('GIPHY_API_TOKEN')
 
 
 class ComandosArgentinos(commands.Cog):
     """COG de comandos principales para el Bot"""
     def __init__(self, bot):
         self.bot = bot
-        self.conn=conectar_db()
+        self.conn = conectar_db()
 
-    def BuscarGifs(self, termino):
-        """Método utilizado para la busqueda de Gifs"""
+    def buscar_gifs(self, termino):
+        """Método utilizado para la búsqueda de Gifs"""
         url = "https://api.giphy.com/v1/gifs/search"
-        parametros={
+        parametros = {
             "api_key": GIPHY_TOKEN,
             "q": termino,
             "limit": 1
         }
-        respuesta=requests.get(url,params=parametros)
+        respuesta = requests.get(url, params=parametros)
 
-        if respuesta.status_code==200:
-            datos=respuesta.json()
+        if respuesta.status_code == 200:
+            datos = respuesta.json()
             if datos["data"]:
                 return datos["data"][0]["images"]["original"]["url"]
         return None
 
-    @commands.command(name="gif")
-    async def gif(self, ctx, *, termino: str):
-        gif_url=self.BuscarGifs(termino)
-        if gif_url:
-            await ctx.send(f"{termino}: {gif_url}")
-        else:
-            await ctx.send(f"No encontré ningún GIF de {termino}, che 😞")
-
-    @commands.command(name='mate')
-    async def mate(self, ctx, member: discord.Member = None):
-        if member is None:
-            await ctx.send("Tenés que mencionarle a alguien para cebarle un mate!")
-        else:
-            await ctx.send(f"{ctx.author.display_name} le está cebando un mate a {member.display_name} 🧉")
-
-    # TRABAJANDO
-
-    # Responder con Gifs
-    # Utilizacion de SqLite3
-    
     @commands.command(name='che')
     async def che(self, ctx):
-        trm="saludo"
-        gif_url=self.BuscarGifs(trm)
+        try:
+            # Obtener frase de la base de datos
+            frase = obtener_frase_aleatoria(self.conn, "frases")
+            if not frase:
+                frase = "No encontré ningún saludo, che 🤷‍♂️"
 
-        obtener_frase_aleatoria(self.conn,saludos)
+            # Obtener el GIF
+            gif_url = self.buscar_gifs("Argentina")
+            if not gif_url:
+                gif_url = None  # Si no hay GIF, no se agrega al embed
 
-        #frase = random.choice(textos.frases)
-        #await ctx.send(frase)
+            # Crear embed para enviar mensaje + GIF
+            embed = discord.Embed(
+                title="Qondaa!",
+                description=frase,
+                color=discord.Color.blue()
+            )
+            if gif_url:
+                embed.set_image(url=gif_url)
 
-    @commands.command(name='dicho')
-    async def dicho(self, ctx):
-        refran = random.choice(textos.dichos)
-        await ctx.send(dichos)
-
-
-    @commands.Cog.listener()
-    async def on_member_join(self, member):
-        canal = discord.utils.get(member.guild.text_channels, name='general')
-        if canal:
-            await canal.send(f"Q ondaaa, {member.display_name}! Bienvenido al server Pá")
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if message.author == self.bot.user:  # Evita que el bot procese sus propios mensajes
-            return
-        # Lógica de reacciones
-        if "fernet" in message.content.lower() or "mate" in message.content.lower():
-            await message.add_reaction("🧉")
-        if "asado" in message.content.lower():
-            await message.add_reaction("🍖")
+            await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send(f"Hubo un problema: {e}")
 
 # Agregar la función setup para registrar el Cog
 async def setup(bot):

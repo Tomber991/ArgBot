@@ -1,6 +1,6 @@
 # 🤖 ArgBot 🇦🇷
 
-¡Bienvenido a **ArgBot**! Este es un bot de Discord que trae todo el espíritu argentino al servidor. Desde frases bien argentas hasta comandos con reacciones. Bot con buena onda! 🧉
+ **ArgBot** es un bot de Discord bien argentino que busca darle un toque cultural a tu servidor. No hay bot más fachero q este 🧉
 
 ---
 
@@ -8,12 +8,12 @@
 
 ### 📜 Comandos Principales
 - **`/arg che`**  
-  Tirá frases bien argentas, no es ningún Bot aburrido 😎  
+  Comando básico, devuelve alguna frase Argentina.
   *Ejemplo:*  
-  `¿Qué onda, che?`
+  `Qué onda?`
 
 - **`/arg dicho`**  
-  Compartí refranes típicos argentinos para sonar como un abuelo sabio.  
+  Devuelve algún refrán argentino. 
   *Ejemplo:*  
   `Más vale pájaro en mano que cien volando.`
 
@@ -23,7 +23,7 @@
   `/arg gif mate` -> ![GIF](https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif)
 
 - **`/arg mate <usuario>`**  
-  Cebale un mate a alguien, porque la amistad es lo más grande!  
+  Cebale un mate a alguien!  
   *Ejemplo:*  
   `@Tomber está cebando un mate a @Usuario 🧉`
 
@@ -33,7 +33,7 @@
 ### 🎉 Bienvenida
 - Le da la bienvenida a los nuevos miembros al estilo argentino.  
   *Ejemplo:*  
-  `Q ondaaa, @NuevoMiembro! Bienvenido al server Pá 👋`
+  `Q ondaaa, @NuevoMiembro! Bienvenido al server Pa 👋`
 
 ---
 

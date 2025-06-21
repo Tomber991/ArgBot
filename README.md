@@ -20,7 +20,7 @@
 - **`/arg gif <tema>`**  
   Busca y envía GIFs directamente desde Giphy para cualquier término.  
   *Ejemplo:*  
-  `/arg gif mate` -> ![GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXdxaWQ0Nm04N2N4c29maGp5Z2JoYjZ1OXlhNHd2cTZmajZzdjVldSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WzR8zb0PN6bUmfz4DW/giphy.gif)
+  `/arg gif argentina` -> ![GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXdxaWQ0Nm04N2N4c29maGp5Z2JoYjZ1OXlhNHd2cTZmajZzdjVldSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WzR8zb0PN6bUmfz4DW/giphy.gif)
 
 - **`/arg mate <usuario>`**  
   Cebale un mate a alguien!  
